@@ -51,4 +51,4 @@ if __name__ == '__main__':
     try:
         app.run(host='0.0.0.0', debug=False, port=sys.argv[1])
     except:
-        app.run(host='106.14.34.215', debug=False, port=9999)
+        app.run(host='0.0.0.0', debug=False, port=9999)
