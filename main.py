@@ -1,3 +1,4 @@
+import logging
 import os
 import sys
 from flask import Flask as _Flask
@@ -9,6 +10,9 @@ import decimal
 import datetime
 import numpy as np
 
+# logging.basicConfig函数对日志的输出格式及方式做相关配置
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s')
 
 try:
     env = sys.argv[2]
@@ -40,9 +44,28 @@ app.config['JSON_AS_ASCII'] = False
 
 
 @app.route('/test', methods=['POST'])
+def cal_test1():
+    data = test.test1()
+    logging.info('111111')
+    logging.info('222222')
+    logging.info('333333')
+    logging.info('444444')
+    logging.info('555555')
+    logging.info('666666')
+    logging.info('777777')
+    return data
+
+
+@app.route('/test1', methods=['POST'])
 def cal_test():
     data = test.test1()
-
+    logging.info('111111')
+    logging.info('222222')
+    logging.info('333333')
+    logging.info('444444')
+    logging.info('555555')
+    logging.info('666666')
+    logging.info('777777')
     return data
 
 
